@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WildfireHero from "../components/WildfireHero.astro";
+import WildfireIntro from "../components/WildfireIntro.astro";
+import WildfireBenefits from "../components/WildfireBenefits.astro";
+import WildfireSpecs from "../components/WildfireSpecs.astro";
+import WildfireDashboard from "../components/WildfireDashboard.astro";
+import WildfireWorkflow from "../components/WildfireWorkflow.astro";
+import WildfireCTA from "../components/WildfireCTA.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Wildfire Monitoring Solution | Kazdrone Solutions">
+    <main class="bg-white">
+        <Navbar />
+        <WildfireHero />
+        <WildfireIntro />
+        <WildfireBenefits />
+        <WildfireSpecs />
+        <WildfireDashboard />
+        <WildfireWorkflow />
+        <WildfireCTA />
+        <Contact />
+        <Footer />
+    </main>
+</Layout>
+
+<style is:global>
+    :root {
+        --primary-orange: #f97316;
+    }
+</style>

@@ -1,0 +1,102 @@
+---
+import { CheckCircle2 } from "lucide-astro";
+---
+
+<section class="py-12 px-4 md:px-8 bg-white overflow-hidden">
+    <div
+        class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-20"
+    >
+        <div class="flex-1 relative order-2 lg:order-1">
+            <div
+                class="relative group rounded-[40px] overflow-hidden shadow-4xl bg-slate-200"
+            >
+                <img
+                    src="/assets/industrial.jpg"
+                    alt="Industrial Inspection"
+                    class="w-full h-auto object-cover transition-transform duration-[2s] group-hover:scale-110"
+                />
+                <div
+                    class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"
+                >
+                </div>
+            </div>
+            <!-- Decorative ring -->
+            <div
+                class="absolute -inset-4 border border-blue-600/10 rounded-[50px] pointer-events-none -z-10"
+            >
+            </div>
+        </div>
+
+        <div class="flex-1 order-1 lg:order-2">
+            <span
+                class="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block"
+                >Technical Specifications</span
+            >
+            <h2
+                class="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight uppercase"
+            >
+                Advanced Sensor <br /> Integration
+            </h2>
+
+            <div class="space-y-10">
+                <div class="flex gap-6 group">
+                    <div
+                        class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
+                    >
+                        <CheckCircle2 size={14} class="text-white" />
+                    </div>
+                    <div>
+                        <h4
+                            class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight"
+                        >
+                            Methane detection
+                        </h4>
+                        <p class="text-slate-500 leading-relaxed max-w-lg">
+                            Using blend of technologies, like gas leakage
+                            cameras, lidars and 4k cameras for delivering a
+                            result.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 group">
+                    <div
+                        class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
+                    >
+                        <CheckCircle2 size={14} class="text-white" />
+                    </div>
+                    <div>
+                        <h4
+                            class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight"
+                        >
+                            Edge AI Processing
+                        </h4>
+                        <p class="text-slate-500 leading-relaxed max-w-lg">
+                            In-flight defect classification reducing data
+                            latency from hours to milliseconds.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 group">
+                    <div
+                        class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
+                    >
+                        <CheckCircle2 size={14} class="text-white" />
+                    </div>
+                    <div>
+                        <h4
+                            class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight"
+                        >
+                            BVLOS technology
+                        </h4>
+                        <p class="text-slate-500 leading-relaxed max-w-lg">
+                            Fly beyond the horizon without connection errors for
+                            large scale pipeline arrays.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import GridHero from "../components/GridHero.astro";
+import GridBenefits from "../components/GridBenefits.astro";
+import GridSpecs from "../components/GridSpecs.astro";
+import GridDashboard from "../components/GridDashboard.astro";
+import GridWorkflow from "../components/GridWorkflow.astro";
+import GridCTA from "../components/GridCTA.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Grid Infrastructure | Substation Inspection Solution">
+    <main class="bg-white">
+        <Navbar />
+        <GridHero />
+        <GridBenefits />
+        <GridSpecs />
+        <GridDashboard />
+        <GridWorkflow />
+        <GridCTA />
+        <Contact />
+        <Footer />
+    </main>
+</Layout>
+
+<style>
+    main {
+        overflow-x: hidden;
+    }
+</style>

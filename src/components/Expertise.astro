@@ -1,0 +1,120 @@
+---
+import { Brain, Cpu, Database, Network } from "lucide-astro";
+---
+
+<section class="py-24 px-4 md:px-8 bg-white">
+    <div class="max-w-screen-2xl mx-auto">
+        <div class="text-center mb-16">
+            <span
+                class="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm"
+                >Our Expertise</span
+            >
+            <h2
+                class="text-4xl md:text-5xl font-bold mt-4 text-slate-900 leading-tight"
+            >
+                What we can do?
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Main Card -->
+            <div
+                class="md:col-span-4 bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between group transition-all hover:shadow-xl hover:-translate-y-1"
+            >
+                <div>
+                    <div
+                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 transition-transform group-hover:scale-110 group-hover:rotate-3"
+                    >
+                        <Brain size={32} />
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                        AI DETECTION AND PREDICTION MODELS
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Advanced neural networks processing real-time aerial
+                        footage for precision identification.
+                    </p>
+                </div>
+                <a
+                    href="#"
+                    class="text-blue-600 font-bold flex items-center gap-2 group/link"
+                >
+                    LEARN MORE <span
+                        class="transition-transform group-hover/link:translate-x-1"
+                        >→</span
+                    >
+                </a>
+            </div>
+
+            <!-- Grid Column for other cards -->
+            <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all group"
+                >
+                    <div
+                        class="text-blue-600 mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <Cpu size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">
+                        CUSTOM SOLUTION FOR YOUR PROBLEM
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Tailor-made hardware and software integration designed
+                        specifically for your operational needs.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all group"
+                >
+                    <div
+                        class="text-blue-600 mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <Database size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">
+                        REAL TIME DATA TRANSMISSION
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Get all data collected, analyzed, visualized and shared
+                        in real time.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all group"
+                >
+                    <div
+                        class="text-blue-600 mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <Network size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">
+                        ERP & CUSTOM INTEGRATION
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Seamlessly connect drone data with your existing
+                        enterprise resource planning software.
+                    </p>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all group"
+                >
+                    <div
+                        class="text-blue-600 mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <Cpu size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">COMMAND CENTER & IOT</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Connect drone data with your IOT platform in one place.
+                        Managing drones and their activity will be easy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,82 @@
+---
+const articles = [
+    {
+        title: "2026 Military Drone Trends: Long-Endurance and Anti-Jamming Platforms",
+        excerpt:
+            "Next-generation drone swarms represent a persistent asymmetric challenge for carrier strike groups, particularly those operating in contested maritime...",
+        date: "February 10, 2026",
+        category: "ANALYSIS",
+        image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/62e25cf1-5808-4983-9437-ca7103967343_800w.webp",
+    },
+    {
+        title: "How AI Edge Computing is Revolutionizing Real-time Threat Detection",
+        excerpt:
+            "Processing data on-board allows for millisecond response times, enabling drones to autonomously navigate complex environments without cloud...",
+        date: "February 8, 2026",
+        category: "TECHNOLOGY",
+        image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/fc53a844-bf21-40ee-8d46-b40afea9946b_800w.webp",
+    },
+];
+---
+
+<section class="py-24 px-4 md:px-8 bg-white">
+    <div class="max-w-screen-2xl mx-auto">
+        <div class="flex items-end justify-between mb-12">
+            <div>
+                <span
+                    class="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm"
+                    >News & Insights</span
+                >
+                <h2
+                    class="text-4xl md:text-5xl font-bold mt-4 text-slate-900 uppercase"
+                >
+                    RECENT ARTICLES
+                </h2>
+            </div>
+            <a
+                href="/news"
+                class="hidden md:block text-slate-500 font-semibold hover:text-blue-600 transition-colors uppercase border-b-2 border-transparent hover:border-blue-600 pb-1"
+                >View All Articles</a
+            >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {
+                articles.map((article) => (
+                    <article class="group cursor-pointer">
+                        <div class="relative aspect-video rounded-3xl overflow-hidden mb-8 shadow-md">
+                            <img
+                                src={article.image}
+                                alt={article.title}
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div class="absolute top-6 left-6 px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded uppercase tracking-widest">
+                                {article.category}
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-400 font-medium">
+                                {article.date}
+                            </p>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
+                                {article.title}
+                            </h3>
+                            <p class="text-slate-500 leading-relaxed line-clamp-2">
+                                {article.excerpt}
+                            </p>
+                            <a
+                                href="#"
+                                class="inline-flex items-center gap-2 text-blue-600 font-bold uppercase text-sm tracking-widest pt-2 group/link"
+                            >
+                                LEARN MORE{" "}
+                                <span class="transition-transform group-hover/link:translate-x-1">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>

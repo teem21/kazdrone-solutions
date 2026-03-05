@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import BorderHero from "../components/BorderHero.astro";
+import BorderIntro from "../components/BorderIntro.astro";
+import BorderBenefits from "../components/BorderBenefits.astro";
+import BorderSpecs from "../components/BorderSpecs.astro";
+import BorderDashboard from "../components/BorderDashboard.astro";
+import BorderWorkflow from "../components/BorderWorkflow.astro";
+import BorderCTA from "../components/BorderCTA.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Border Security | KAZDRONE Autonomous Solutions">
+    <Navbar />
+    <main class="pt-20">
+        <BorderHero />
+        <BorderIntro />
+        <BorderBenefits />
+        <BorderSpecs />
+        <BorderDashboard />
+        <BorderWorkflow />
+        <BorderCTA />
+        <Contact />
+    </main>
+    <Footer />
+</Layout>
+
+<style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+    body {
+        font-family: "Inter", sans-serif;
+    }
+</style>

@@ -1,0 +1,117 @@
+---
+import { FileText, Wrench, Layers, CheckCircle } from "lucide-astro";
+---
+
+<section class="py-24 px-4 md:px-8 bg-white overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto">
+        <div class="text-center mb-16">
+            <span
+                class="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm"
+                >Process</span
+            >
+            <h2
+                class="text-4xl md:text-5xl font-bold mt-4 text-slate-900 leading-tight"
+            >
+                HOW WE WORK
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <!-- Connection Line -->
+            <div
+                class="hidden md:block absolute top-[140px] left-[10%] right-[10%] h-[2px] bg-slate-100 -z-0"
+            >
+            </div>
+
+            <!-- Step 01 -->
+            <div class="relative z-10 group text-center md:text-left">
+                <div
+                    class="text-[120px] font-bold text-slate-50 absolute -top-20 md:-left-4 -z-10 group-hover:text-blue-50 transition-colors"
+                >
+                    01
+                </div>
+                <div
+                    class="w-20 h-20 bg-white border-4 border-slate-50 flex items-center justify-center text-blue-600 rounded-3xl mx-auto md:mx-0 mb-8 shadow-xl transition-all group-hover:border-blue-100 group-hover:scale-110"
+                >
+                    <FileText size={32} />
+                </div>
+                <h3 class="text-xl font-bold mb-4 uppercase">MAKE A SCOPE</h3>
+                <p
+                    class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0"
+                >
+                    We collect data about your project, current problems it has
+                    and develop a solution scope.
+                </p>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="relative z-10 group text-center md:text-left">
+                <div
+                    class="text-[120px] font-bold text-slate-50 absolute -top-20 md:-left-4 -z-10 group-hover:text-blue-50 transition-colors"
+                >
+                    02
+                </div>
+                <div
+                    class="w-20 h-20 bg-white border-4 border-slate-50 flex items-center justify-center text-blue-600 rounded-3xl mx-auto md:mx-0 mb-8 shadow-xl transition-all group-hover:border-blue-100 group-hover:scale-110"
+                >
+                    <Wrench size={32} />
+                </div>
+                <h3 class="text-xl font-bold mb-4 uppercase">
+                    CHOOSE THE INSTRUMENTS
+                </h3>
+                <p
+                    class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0"
+                >
+                    We choose the right type drones, and software for the
+                    specific requirements of the mission.
+                </p>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="relative z-10 group text-center md:text-left">
+                <div
+                    class="text-[120px] font-bold text-slate-50 absolute -top-20 md:-left-4 -z-10 group-hover:text-blue-50 transition-colors"
+                >
+                    03
+                </div>
+                <div
+                    class="w-20 h-20 bg-white border-4 border-slate-50 flex items-center justify-center text-blue-600 rounded-3xl mx-auto md:mx-0 mb-8 shadow-xl transition-all group-hover:border-blue-100 group-hover:scale-110"
+                >
+                    <Layers size={32} />
+                </div>
+                <h3 class="text-xl font-bold mb-4 uppercase">
+                    CREATING FRAMEWORKS AND WORKFLOW
+                </h3>
+                <p
+                    class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0"
+                >
+                    We calculated how many drones the project needs, and how the
+                    work process should be done.
+                </p>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="relative z-10 group text-center md:text-left">
+                <div
+                    class="text-[120px] font-bold text-slate-50 absolute -top-20 md:-left-4 -z-10 group-hover:text-blue-50 transition-colors"
+                >
+                    04
+                </div>
+                <div
+                    class="w-20 h-20 bg-white border-4 border-slate-50 flex items-center justify-center text-blue-600 rounded-3xl mx-auto md:mx-0 mb-8 shadow-xl transition-all group-hover:border-blue-100 group-hover:scale-110"
+                >
+                    <CheckCircle size={32} />
+                </div>
+                <h3 class="text-xl font-bold mb-4 uppercase">
+                    CREATING A SYSTEM
+                </h3>
+                <p
+                    class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0"
+                >
+                    Finalizing the solution for your problem with integrated
+                    testing and deployment protocols.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

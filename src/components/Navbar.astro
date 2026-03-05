@@ -1,0 +1,92 @@
+---
+import { ChevronDown, ShoppingCart, Search, Menu } from "lucide-astro";
+---
+
+<nav
+    class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 md:px-8 py-3 shadow-sm"
+>
+    <div
+        class="flex max-w-screen-2xl mx-auto items-center justify-between gap-6"
+    >
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2">
+            <span class="text-xl font-bold tracking-tighter text-slate-900"
+                >KAZDRONE<span class="text-blue-600"> SOLUTIONS</span>
+            </span>
+        </a>
+
+        <!-- Menu Links -->
+        <div class="hidden md:flex items-center gap-8">
+            <div class="relative group">
+                <button
+                    class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
+                >
+                    Solutions <ChevronDown size={16} />
+                </button>
+                <div
+                    class="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-100 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-2 z-50"
+                >
+                    <a
+                        href="/solutions"
+                        class="flex items-center gap-2 px-4 py-3 text-sm font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all border-b border-slate-100 mb-1"
+                    >
+                        View All Solutions →
+                    </a>
+                    <a
+                        href="/pipeline-solution"
+                        class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                    >
+                        Pipeline Inspection
+                    </a>
+                    <a
+                        href="/grid-solution"
+                        class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                    >
+                        Substation Inspection
+                    </a>
+                    <a
+                        href="/wildfire-solution"
+                        class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                    >
+                        Wildfire Monitoring
+                    </a>
+                    <a
+                        href="/border-solution"
+                        class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                    >
+                        Border Security
+                    </a>
+                </div>
+            </div>
+            <a
+                href="/store"
+                class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
+                >Store</a
+            >
+            <a
+                href="/about"
+                class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
+                >About</a
+            >
+            <a
+                href="/news"
+                class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
+                >News</a
+            >
+        </div>
+
+        <!-- Actions -->
+
+        <button
+            data-popup="contact"
+            class="hidden md:block px-6 py-2.5 text-sm font-semibold bg-slate-900 text-white hover:bg-blue-600 rounded-full transition-all shadow-md active:scale-95"
+        >
+            CONTACT US
+        </button>
+        <button
+            class="md:hidden p-2 hover:bg-slate-100 rounded-full text-slate-600"
+        >
+            <Menu size={24} />
+        </button>
+    </div>
+</nav>

@@ -1,0 +1,214 @@
+<!-- Global Contact/Demo Request Popup Modal --><!-- Triggered by any element with data-popup="contact" attribute -->
+<div
+    id="contact-popup-overlay"
+    class="fixed inset-0 z-[1000] hidden items-center justify-center p-4 md:p-8"
+    aria-modal="true"
+    role="dialog"
+    aria-labelledby="popup-title"
+>
+    <!-- Backdrop -->
+    <div
+        id="contact-popup-backdrop"
+        class="absolute inset-0 bg-slate-950/80 backdrop-blur-md"
+    >
+    </div>
+
+    <!-- Modal Card -->
+    <div
+        id="contact-popup-card"
+        class="relative w-full max-w-2xl bg-white rounded-[2rem] shadow-[0_40px_100px_rgba(0,0,0,0.3)] overflow-hidden transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-y-auto"
+    >
+        <!-- Top bar -->
+        <div class="bg-slate-900 px-8 py-5 flex items-center justify-between">
+            <div>
+                <p
+                    class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-0.5"
+                >
+                    KAZDRONE SOLUTIONS
+                </p>
+                <h2
+                    id="popup-title"
+                    class="text-xl font-black text-white uppercase tracking-tight"
+                >
+                    Request a Demo
+                </h2>
+            </div>
+            <button
+                id="contact-popup-close"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
+                aria-label="Close form"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Form Body -->
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed">
+                Tell us about your mission and we'll show you exactly how our
+                technology can help — with a live, tailored demonstration.
+            </p>
+
+            <form id="contact-popup-form" class="flex flex-col gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="space-y-1.5">
+                        <label
+                            class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+                            >Full Name</label
+                        >
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            required
+                            class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
+                        />
+                    </div>
+                    <div class="space-y-1.5">
+                        <label
+                            class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+                            >Email</label
+                        >
+                        <input
+                            type="email"
+                            placeholder="email@example.com"
+                            required
+                            class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
+                        />
+                    </div>
+                    <div class="space-y-1.5">
+                        <label
+                            class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+                            >Phone</label
+                        >
+                        <input
+                            type="tel"
+                            placeholder="+1 (555) 000-0000"
+                            class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
+                        />
+                    </div>
+                    <div class="space-y-1.5">
+                        <label
+                            class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+                            >Organization</label
+                        >
+                        <input
+                            type="text"
+                            placeholder="Company / Agency Name"
+                            class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
+                        />
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label
+                        class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+                        >Solution of Interest</label
+                    >
+                    <select
+                        class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm text-slate-700 appearance-none"
+                    >
+                        <option value="">Select a solution…</option>
+                        <option>Pipeline Inspection</option>
+                        <option>Substation Inspection</option>
+                        <option>Wildfire Monitoring</option>
+                        <option>Border Security</option>
+                        <option>Custom Solution</option>
+                    </select>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label
+                        class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+                        >Message</label
+                    >
+                    <textarea
+                        rows="3"
+                        placeholder="Tell us about your use case and what you'd like to achieve…"
+                        class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-none text-sm"
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-slate-900 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all hover:bg-blue-600 active:scale-[0.98] flex items-center justify-center gap-3 text-sm mt-2"
+                >
+                    <span>Submit Request</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="m22 2-7 20-4-9-9-4Z"></path><path
+                            d="M22 2 11 13"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const overlay = document.getElementById("contact-popup-overlay")!;
+    const card = document.getElementById("contact-popup-card")!;
+    const closeBtn = document.getElementById("contact-popup-close")!;
+    const backdrop = document.getElementById("contact-popup-backdrop")!;
+
+    function openPopup() {
+        overlay.classList.remove("hidden");
+        overlay.classList.add("flex");
+        document.body.style.overflow = "hidden";
+        // Animate in
+        requestAnimationFrame(() => {
+            card.classList.remove("scale-95", "opacity-0");
+            card.classList.add("scale-100", "opacity-100");
+        });
+    }
+
+    function closePopup() {
+        card.classList.add("scale-95", "opacity-0");
+        card.classList.remove("scale-100", "opacity-100");
+        setTimeout(() => {
+            overlay.classList.add("hidden");
+            overlay.classList.remove("flex");
+            document.body.style.overflow = "";
+        }, 250);
+    }
+
+    closeBtn.addEventListener("click", closePopup);
+    backdrop.addEventListener("click", closePopup);
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePopup();
+    });
+
+    // Wire up all trigger elements
+    document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        const trigger = target.closest('[data-popup="contact"]');
+        if (trigger) {
+            e.preventDefault();
+            openPopup();
+        }
+    });
+
+    // Expose globally for any programmatic use
+    (window as any).openContactPopup = openPopup;
+</script>

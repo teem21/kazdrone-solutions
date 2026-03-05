@@ -1,0 +1,144 @@
+---
+import { ArrowRight, Flame, Shield, Zap, GitBranch } from "lucide-astro";
+
+const solutions = [
+    {
+        id: "wildfire",
+        label: "Nature Protection",
+        title: "Autonomous Wildfire Monitoring",
+        accentTitle: "Wildfire Monitoring",
+        description:
+            "Detect ignition points, track fire fronts in real-time, and coordinate emergency response with AI-powered aerial surveillance. Protect nature from fire.",
+        image: "/assets/firefightinghero.jpg",
+        href: "/wildfire-solution",
+        accentColor: "orange",
+        tagBg: "bg-orange-500/10",
+        tagText: "text-orange-400",
+        tagBorder: "border-orange-500/20",
+        titleAccent: "text-orange-500",
+        btnBg: "bg-orange-600 hover:bg-orange-700 shadow-orange-500/25",
+        gradientFrom: "from-slate-950/90",
+        gradientMid: "via-slate-950/70",
+        overlayColor: "bg-orange-950/20",
+    },
+    {
+        id: "border",
+        label: "National Security",
+        title: "Autonomous Border Integrity",
+        accentTitle: "Border Integrity",
+        description:
+            "Secure vast perimeters with AI-powered aerial patrols. Detect unauthorized crossings, track movement in difficult terrain, and coordinate rapid response with zero detection gaps.",
+        image: "/assets/borderhero.jpg",
+        href: "/border-solution",
+        accentColor: "orange",
+        tagBg: "bg-orange-500/10",
+        tagText: "text-orange-400",
+        tagBorder: "border-orange-500/20",
+        titleAccent: "text-orange-500",
+        btnBg: "bg-orange-600 hover:bg-orange-700 shadow-orange-500/25",
+        gradientFrom: "from-slate-950/70",
+        gradientMid: "via-slate-950/70",
+        overlayColor: "bg-blue-950/5",
+    },
+    {
+        id: "pipeline",
+        label: "Industry Solution",
+        title: "AI-Powered Pipeline Inspection",
+        accentTitle: "Pipeline Inspection",
+        description:
+            "Set up a system that detects leaks, corrosion, and structural anomalies with unmatched precision and safety. Connect data from drone to your ERP and get real-time visualization.",
+        image: "/assets/pipelinehero.jpg",
+        href: "/pipeline-solution",
+        accentColor: "blue",
+        tagBg: "bg-blue-500/10",
+        tagText: "text-blue-400",
+        tagBorder: "border-blue-500/20",
+        titleAccent: "text-blue-500",
+        btnBg: "bg-blue-600 hover:bg-blue-700 shadow-blue-500/25",
+        gradientFrom: "from-slate-950/90",
+        gradientMid: "via-slate-950/40",
+        overlayColor: "bg-slate-950/10",
+    },
+    {
+        id: "grid",
+        label: "Grid Infrastructure",
+        title: "AI-Powered Substation Inspection",
+        accentTitle: "Substation Inspection",
+        description:
+            "Revolutionize grid reliability with autonomous drone thermal and visual inspections. Ensure uninterrupted power delivery through high-frequency, safe monitoring.",
+        image: "/assets/herostation.jpg",
+        href: "/grid-solution",
+        accentColor: "blue",
+        tagBg: "bg-blue-500/10",
+        tagText: "text-blue-400",
+        tagBorder: "border-blue-500/20",
+        titleAccent: "text-blue-500",
+        btnBg: "bg-blue-600 hover:bg-blue-700 shadow-blue-500/25",
+        gradientFrom: "from-slate-950/90",
+        gradientMid: "via-slate-950/40",
+        overlayColor: "bg-slate-950/10",
+    },
+];
+---
+
+<section id="solutions" class="py-8 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-4 md:px-8">
+        <!-- Section header -->
+        <div class="text-center mb-10">
+            <p class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-4">Our Portfolio</p>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
+                Select Your <span class="text-blue-600">Mission</span>
+            </h2>
+        </div>
+
+        <!-- Solution Blocks Grid -->
+        <div class="space-y-6">
+            {solutions.map((s, i) => (
+                <a
+                    href={s.href}
+                    class="group relative block w-full rounded-[24px] overflow-hidden shadow-2xl bg-slate-900 h-[440px] md:h-[520px] focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition-all hover:scale-[1.01] hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
+                    aria-label={`View ${s.title} solution`}
+                >
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 z-0">
+                        <img
+                            src={s.image}
+                            alt={s.title}
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            style={s.id === "wildfire" ? "opacity:0.6" : "opacity:0.8"}
+                        />
+                        <div class={`absolute inset-0 bg-gradient-to-r ${s.gradientFrom} ${s.gradientMid} to-transparent`}></div>
+                        <div class={`absolute inset-0 ${s.overlayColor}`}></div>
+                        <!-- Extra dark vignette on hover for readability -->
+                        <div class="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/10 transition-colors duration-300"></div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="relative z-10 h-full flex flex-col justify-between p-8 md:p-14">
+                        <div class="flex items-start justify-between">
+                            <!-- Label badge -->
+                            <span class={`inline-block px-4 py-1.5 rounded-full ${s.tagBg} ${s.tagText} text-sm font-bold tracking-wider uppercase border ${s.tagBorder}`}>
+                                {s.label}
+                            </span>
+
+                            <!-- Arrow indicator -->
+                            <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-white/20 group-hover:border-white/40 transition-all">
+                                <ArrowRight class="text-white transition-transform group-hover:translate-x-0.5" size={20} />
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-5 leading-[1.05] uppercase">
+                                {s.title.split(s.accentTitle)[0]}
+                                <span class={s.titleAccent}>{s.accentTitle}</span>
+                            </h2>
+                            <p class="text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                                {s.description}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+</section>

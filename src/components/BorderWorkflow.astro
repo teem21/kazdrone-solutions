@@ -1,0 +1,59 @@
+---
+const steps = [
+    {
+        number: "01",
+        title: "Sector Patrol",
+        description:
+            "Autonomous drones execute pre-programmed flight paths over high-risk border corridors 24/7.",
+    },
+    {
+        number: "02",
+        title: "AI Detection",
+        description:
+            "On-board vision identifies movement, human signatures, or unauthorized vehicles in any terrain.",
+    },
+    {
+        number: "03",
+        title: "Track & ID",
+        description:
+            "System locks onto the target, providing live high-zoom video and GPS coordinates to command.",
+    },
+    {
+        number: "04",
+        title: "Rapid Dispatch",
+        description:
+            "Coordinate intercept teams with real-time positional data, ensuring zero-gap apprehension.",
+    },
+];
+---
+
+<section class="py-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2
+                class="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight"
+            >
+                Security Workflow
+            </h2>
+            <div class="w-12 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {
+                steps.map((step) => (
+                    <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                        <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">
+                            {step.number}
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight">
+                            {step.title}
+                        </h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            {step.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

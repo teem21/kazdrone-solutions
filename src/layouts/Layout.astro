@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import ContactPopup from "../components/ContactPopup.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>KAZDRONE SOLUTIONS</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary: #d8e6fd;
+                --accent: #c4dafc;
+                --background: #ffffff;
+                --text-primary: #171717;
+            }
+            body {
+                font-family: "Geist", "Inter", sans-serif;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Plus Jakarta Sans", sans-serif;
+            }
+            @keyframes beam-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes dots-move {
+                from {
+                    background-position: 0 0;
+                }
+                to {
+                    background-position: 24px 24px;
+                }
+            }
+            .shadow-5xl {
+                box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body class="antialiased text-[#171717] bg-white">
+        <slot />
+        <ContactPopup />
+    </body>
+</html>

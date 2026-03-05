@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import PipelineHero from "../components/PipelineHero.astro";
+import PipelineBenefits from "../components/PipelineBenefits.astro";
+import PipelineSpecs from "../components/PipelineSpecs.astro";
+import PipelineDashboard from "../components/PipelineDashboard.astro";
+import PipelineWorkflow from "../components/PipelineWorkflow.astro";
+import PipelineCTA from "../components/PipelineCTA.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Pipeline Inspection | Kazdrone Solutions">
+    <Navbar />
+    <main>
+        <PipelineHero />
+        <PipelineBenefits />
+        <PipelineSpecs />
+        <PipelineWorkflow />
+        <PipelineDashboard />
+        <PipelineCTA />
+        <Contact />
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        width: 100%;
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+</style>
