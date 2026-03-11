@@ -1,59 +1,30 @@
----
-const steps = [
-    {
-        number: "01",
-        title: "Sector Patrol",
-        description:
-            "Autonomous drones execute pre-programmed flight paths over high-risk border corridors 24/7.",
-    },
-    {
-        number: "02",
-        title: "AI Detection",
-        description:
-            "On-board vision identifies movement, human signatures, or unauthorized vehicles in any terrain.",
-    },
-    {
-        number: "03",
-        title: "Track & ID",
-        description:
-            "System locks onto the target, providing live high-zoom video and GPS coordinates to command.",
-    },
-    {
-        number: "04",
-        title: "Rapid Dispatch",
-        description:
-            "Coordinate intercept teams with real-time positional data, ensuring zero-gap apprehension.",
-    },
-];
----
-
 <section class="py-12 bg-white">
     <div class="max-w-screen-xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2
-                class="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight"
-            >
-                Security Workflow
-            </h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight" data-i18n="brd_wf_title">Security Workflow</h2>
             <div class="w-12 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {
-                steps.map((step) => (
-                    <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
-                        <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">
-                            {step.number}
-                        </span>
-                        <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight">
-                            {step.title}
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">
-                            {step.description}
-                        </p>
-                    </div>
-                ))
-            }
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">01</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="brd_wf1_title">Sector Patrol</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="brd_wf1_desc">Autonomous drones execute pre-programmed flight paths over high-risk border corridors 24/7.</p>
+            </div>
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">02</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="brd_wf2_title">AI Detection</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="brd_wf2_desc">On-board vision identifies movement, human signatures, or unauthorized vehicles in any terrain.</p>
+            </div>
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">03</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="brd_wf3_title">Track & ID</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="brd_wf3_desc">System locks onto the target, providing live high-zoom video and GPS coordinates to command.</p>
+            </div>
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">04</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="brd_wf4_title">Rapid Dispatch</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="brd_wf4_desc">Coordinate intercept teams with real-time positional data, ensuring zero-gap apprehension.</p>
+            </div>
         </div>
     </div>
 </section>

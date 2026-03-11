@@ -4,64 +4,20 @@ import { Flame, ShieldAlert, Zap } from "lucide-astro";
 
 <section class="py-12 px-4 md:px-8 bg-white">
     <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-        <!-- Benefit 1 -->
-        <div
-            class="p-10 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1"
-        >
-            <div
-                class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center mb-8"
-            >
-                <Flame size={28} />
-            </div>
-            <h3
-                class="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight"
-            >
-                Early Ignition Detection
-            </h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-                Identify smoke and thermal anomalies within minutes of ignition
-                using high-sensitivity radiometric sensors.
-            </p>
+        <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center mb-8"><Flame size={28} /></div>
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight" data-i18n="wf_ben1_title">Early Ignition Detection</h3>
+            <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_ben1_desc">Identify smoke and thermal anomalies within minutes of ignition using high-sensitivity radiometric sensors.</p>
         </div>
-
-        <!-- Benefit 2 -->
-        <div
-            class="p-10 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1"
-        >
-            <div
-                class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center mb-8"
-            >
-                <ShieldAlert size={28} />
-            </div>
-            <h3
-                class="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight"
-            >
-                Real-time Front Mapping
-            </h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-                Track the progression and intensity of fire fronts to provide
-                actionable intelligence for ground containment crews.
-            </p>
+        <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center mb-8"><ShieldAlert size={28} /></div>
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight" data-i18n="wf_ben2_title">Real-time Front Mapping</h3>
+            <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_ben2_desc">Track the progression and intensity of fire fronts to provide actionable intelligence for ground containment crews.</p>
         </div>
-
-        <!-- Benefit 3 -->
-        <div
-            class="p-10 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1"
-        >
-            <div
-                class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center mb-8"
-            >
-                <Zap size={28} />
-            </div>
-            <h3
-                class="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight"
-            >
-                Rapid Aerial Deployment
-            </h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-                Deploy long-endurance BVLOS drones that can cover thousands of
-                hectares without risk to human pilots in hazardous conditions.
-            </p>
+        <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-14 h-14 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center mb-8"><Zap size={28} /></div>
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight" data-i18n="wf_ben3_title">Rapid Aerial Deployment</h3>
+            <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_ben3_desc">Deploy long-endurance BVLOS drones that can cover thousands of hectares without risk to human pilots in hazardous conditions.</p>
         </div>
     </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-import { ChevronDown, ShoppingCart, Search, Menu } from "lucide-astro";
+import { ChevronDown, Menu } from "lucide-astro";
 ---
 
 <nav
@@ -21,7 +21,8 @@ import { ChevronDown, ShoppingCart, Search, Menu } from "lucide-astro";
                 <button
                     class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
                 >
-                    Solutions <ChevronDown size={16} />
+                    <span data-i18n="nav_solutions">Solutions</span>
+                    <ChevronDown size={16} />
                 </button>
                 <div
                     class="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-100 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-2 z-50"
@@ -29,30 +30,35 @@ import { ChevronDown, ShoppingCart, Search, Menu } from "lucide-astro";
                     <a
                         href="/solutions"
                         class="flex items-center gap-2 px-4 py-3 text-sm font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all border-b border-slate-100 mb-1"
+                        data-i18n="nav_view_all"
                     >
                         View All Solutions →
                     </a>
                     <a
                         href="/pipeline-solution"
                         class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                        data-i18n="nav_pipeline"
                     >
                         Pipeline Inspection
                     </a>
                     <a
                         href="/grid-solution"
                         class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                        data-i18n="nav_grid"
                     >
                         Substation Inspection
                     </a>
                     <a
                         href="/wildfire-solution"
                         class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                        data-i18n="nav_wildfire"
                     >
                         Wildfire Monitoring
                     </a>
                     <a
                         href="/border-solution"
                         class="block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
+                        data-i18n="nav_border"
                     >
                         Border Security
                     </a>
@@ -61,32 +67,208 @@ import { ChevronDown, ShoppingCart, Search, Menu } from "lucide-astro";
             <a
                 href="/store"
                 class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
-                >Store</a
+                data-i18n="nav_store">Store</a
             >
             <a
                 href="/about"
                 class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
-                >About</a
+                data-i18n="nav_about">About</a
             >
             <a
                 href="/news"
                 class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase"
-                >News</a
+                data-i18n="nav_news">News</a
             >
         </div>
 
-        <!-- Actions -->
+        <!-- Actions (desktop) -->
+        <div class="hidden md:flex items-center gap-3">
+            <!-- Language Switcher -->
+            <div class="flex items-center gap-0.5 bg-slate-100 rounded-full p-1">
+                <button
+                    data-lang="en"
+                    class="lang-btn px-3 py-1 text-xs font-bold rounded-full transition-all bg-white text-slate-900 shadow-sm"
+                >EN</button>
+                <button
+                    data-lang="ru"
+                    class="lang-btn px-3 py-1 text-xs font-bold rounded-full transition-all text-slate-500"
+                >RU</button>
+                <button
+                    data-lang="kz"
+                    class="lang-btn px-3 py-1 text-xs font-bold rounded-full transition-all text-slate-500"
+                >KZ</button>
+            </div>
+            <button
+                data-popup="contact"
+                class="px-6 py-2.5 text-sm font-semibold bg-slate-900 text-white hover:bg-blue-600 rounded-full transition-all shadow-md active:scale-95"
+                data-i18n="nav_contact"
+            >
+                CONTACT US
+            </button>
+        </div>
 
         <button
-            data-popup="contact"
-            class="hidden md:block px-6 py-2.5 text-sm font-semibold bg-slate-900 text-white hover:bg-blue-600 rounded-full transition-all shadow-md active:scale-95"
-        >
-            CONTACT US
-        </button>
-        <button
+            id="mobile-menu-btn"
             class="md:hidden p-2 hover:bg-slate-100 rounded-full text-slate-600"
+            aria-label="Open menu"
         >
             <Menu size={24} />
         </button>
     </div>
 </nav>
+
+<!-- Mobile Menu Drawer -->
+<div
+    id="mobile-menu-overlay"
+    class="fixed inset-0 z-40 hidden"
+    aria-hidden="true"
+>
+    <!-- Backdrop -->
+    <div
+        id="mobile-menu-backdrop"
+        class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
+    >
+    </div>
+
+    <!-- Drawer panel -->
+    <div
+        id="mobile-menu-panel"
+        class="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300"
+    >
+        <!-- Header -->
+        <div
+            class="flex items-center justify-between px-6 py-4 border-b border-slate-100"
+        >
+            <span class="text-base font-bold tracking-tighter text-slate-900"
+                >KAZDRONE<span class="text-blue-600"> SOLUTIONS</span>
+            </span>
+            <button
+                id="mobile-menu-close"
+                class="p-2 hover:bg-slate-100 rounded-full text-slate-600"
+                aria-label="Close menu"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Language Switcher (Mobile) -->
+        <div class="px-4 pt-4">
+            <div class="flex items-center gap-0.5 bg-slate-100 rounded-full p-1 w-fit">
+                <button
+                    data-lang="en"
+                    class="lang-btn px-4 py-1.5 text-xs font-bold rounded-full transition-all bg-white text-slate-900 shadow-sm"
+                >EN</button>
+                <button
+                    data-lang="ru"
+                    class="lang-btn px-4 py-1.5 text-xs font-bold rounded-full transition-all text-slate-500"
+                >RU</button>
+                <button
+                    data-lang="kz"
+                    class="lang-btn px-4 py-1.5 text-xs font-bold rounded-full transition-all text-slate-500"
+                >KZ</button>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <nav class="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
+            <p
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2 mt-2"
+                data-i18n="nav_solutions"
+            >
+                Solutions
+            </p>
+            <a
+                href="/solutions"
+                class="px-3 py-3 text-sm font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-colors"
+                data-i18n="nav_view_all">View All Solutions →</a
+            >
+            <a
+                href="/pipeline-solution"
+                class="px-3 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors"
+                data-i18n="nav_pipeline">Pipeline Inspection</a
+            >
+            <a
+                href="/grid-solution"
+                class="px-3 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors"
+                data-i18n="nav_grid">Substation Inspection</a
+            >
+            <a
+                href="/wildfire-solution"
+                class="px-3 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors"
+                data-i18n="nav_wildfire">Wildfire Monitoring</a
+            >
+            <a
+                href="/border-solution"
+                class="px-3 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors"
+                data-i18n="nav_border">Border Security</a
+            >
+
+            <div class="border-t border-slate-100 my-3"></div>
+            <a
+                href="/store"
+                class="px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors uppercase"
+                data-i18n="nav_store">Store</a
+            >
+            <a
+                href="/about"
+                class="px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors uppercase"
+                data-i18n="nav_about">About</a
+            >
+            <a
+                href="/news"
+                class="px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors uppercase"
+                data-i18n="nav_news">News</a
+            >
+        </nav>
+
+        <!-- CTA -->
+        <div class="p-4 border-t border-slate-100">
+            <button
+                data-popup="contact"
+                class="w-full px-6 py-3 text-sm font-semibold bg-slate-900 text-white hover:bg-blue-600 rounded-full transition-all shadow-md active:scale-95"
+                data-i18n="nav_contact"
+            >
+                CONTACT US
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const btn = document.getElementById("mobile-menu-btn")!;
+    const overlay = document.getElementById("mobile-menu-overlay")!;
+    const panel = document.getElementById("mobile-menu-panel")!;
+    const backdrop = document.getElementById("mobile-menu-backdrop")!;
+    const closeBtn = document.getElementById("mobile-menu-close")!;
+
+    function openMenu() {
+        overlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+        requestAnimationFrame(() => {
+            panel.classList.remove("translate-x-full");
+        });
+    }
+
+    function closeMenu() {
+        panel.classList.add("translate-x-full");
+        setTimeout(() => {
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "";
+        }, 300);
+    }
+
+    btn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
+    backdrop.addEventListener("click", closeMenu);
+</script>

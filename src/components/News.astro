@@ -25,10 +25,11 @@ const articles = [
             <div>
                 <span
                     class="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm"
-                    >News & Insights</span
+                    data-i18n="news_label">News & Insights</span
                 >
                 <h2
                     class="text-4xl md:text-5xl font-bold mt-4 text-slate-900 uppercase"
+                    data-i18n="news_title"
                 >
                     RECENT ARTICLES
                 </h2>
@@ -36,7 +37,7 @@ const articles = [
             <a
                 href="/news"
                 class="hidden md:block text-slate-500 font-semibold hover:text-blue-600 transition-colors uppercase border-b-2 border-transparent hover:border-blue-600 pb-1"
-                >View All Articles</a
+                data-i18n="news_view_all">View All Articles</a
             >
         </div>
 
@@ -68,10 +69,8 @@ const articles = [
                                 href="#"
                                 class="inline-flex items-center gap-2 text-blue-600 font-bold uppercase text-sm tracking-widest pt-2 group/link"
                             >
-                                LEARN MORE{" "}
-                                <span class="transition-transform group-hover/link:translate-x-1">
-                                    →
-                                </span>
+                                <span data-i18n="news_learn_more">LEARN MORE</span>
+                                <span class="transition-transform group-hover/link:translate-x-1">→</span>
                             </a>
                         </div>
                     </article>

@@ -6,25 +6,28 @@ import { Send } from "lucide-astro";
     <div class="max-w-screen-xl mx-auto text-center">
         <h2
             class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 uppercase"
+            data-i18n="contact_title"
         >
             Request a Demo
         </h2>
-        <p class="text-slate-500 mb-16 max-w-2xl mx-auto">
-            Describe result you want to achieve with our technology leverage and
-            we will show you how to do it.
+        <p class="text-slate-500 mb-16 max-w-2xl mx-auto" data-i18n="contact_desc">
+            Tell us the outcome you want to achieve, and we'll show you exactly how our technology gets you there.
         </p>
 
         <form
+            id="contact-page-form"
             class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-slate-100 flex flex-col gap-6 text-left"
         >
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
                     <label
                         class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1"
-                        >Name</label
+                        data-i18n="contact_name_label">Name</label
                     >
                     <input
+                        id="contact-name"
                         type="text"
+                        data-i18n-placeholder="contact_name_ph"
                         placeholder="Your Name"
                         class="w-full px-6 py-4 bg-slate-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all"
                     />
@@ -32,9 +35,10 @@ import { Send } from "lucide-astro";
                 <div class="space-y-2">
                     <label
                         class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1"
-                        >Email</label
+                        data-i18n="contact_email_label">Email</label
                     >
                     <input
+                        id="contact-email"
                         type="email"
                         placeholder="email@example.com"
                         class="w-full px-6 py-4 bg-slate-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all"
@@ -43,9 +47,10 @@ import { Send } from "lucide-astro";
                 <div class="space-y-2">
                     <label
                         class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1"
-                        >Tel</label
+                        data-i18n="contact_tel_label">Tel</label
                     >
                     <input
+                        id="contact-phone"
                         type="tel"
                         placeholder="+1 (555) 000-0000"
                         class="w-full px-6 py-4 bg-slate-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all"
@@ -54,10 +59,12 @@ import { Send } from "lucide-astro";
                 <div class="space-y-2">
                     <label
                         class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1"
-                        >WhatsApp / Organization</label
+                        data-i18n="contact_org_label">WhatsApp / Organization</label
                     >
                     <input
+                        id="contact-org"
                         type="text"
+                        data-i18n-placeholder="contact_org_ph"
                         placeholder="Company Name"
                         class="w-full px-6 py-4 bg-slate-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all"
                     />
@@ -67,21 +74,82 @@ import { Send } from "lucide-astro";
             <div class="space-y-2">
                 <label
                     class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1"
-                    >Message</label
+                    data-i18n="contact_msg_label">Message</label
                 >
                 <textarea
+                    id="contact-message"
                     rows="4"
+                    data-i18n-placeholder="contact_msg_ph"
                     placeholder="How can we help you?"
                     class="w-full px-6 py-4 bg-slate-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-none"
                 ></textarea>
             </div>
 
             <button
+                id="contact-submit-btn"
                 type="submit"
                 class="w-full md:w-auto bg-slate-900 text-white px-10 py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all hover:bg-slate-800 active:scale-[0.98] mt-4 uppercase tracking-widest"
             >
-                SUBMIT REQUEST <Send size={20} />
+                <span id="contact-submit-label" data-i18n="contact_submit">SUBMIT REQUEST</span>
+                <Send size={20} />
             </button>
         </form>
     </div>
 </section>
+
+<script>
+    const TG_TOKEN = "8380395507:AAGFe6AU8WVNsLvA-OJrhJV5bOSW-EKntcM";
+    const TG_CHAT  = "458983984";
+
+    const form      = document.getElementById("contact-page-form") as HTMLFormElement;
+    const submitBtn = document.getElementById("contact-submit-btn") as HTMLButtonElement;
+    const submitLbl = document.getElementById("contact-submit-label")!;
+
+    form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name    = (document.getElementById("contact-name")    as HTMLInputElement).value.trim();
+        const email   = (document.getElementById("contact-email")   as HTMLInputElement).value.trim();
+        const phone   = (document.getElementById("contact-phone")   as HTMLInputElement).value.trim();
+        const org     = (document.getElementById("contact-org")     as HTMLInputElement).value.trim();
+        const message = (document.getElementById("contact-message") as HTMLTextAreaElement).value.trim();
+
+        submitBtn.disabled = true;
+        submitLbl.textContent = "Sending…";
+
+        const text =
+`🆕 <b>New Lead — KAZDRONE SOLUTIONS</b>
+
+👤 <b>Name:</b> ${name || "—"}
+📧 <b>Email:</b> ${email || "—"}
+📞 <b>Phone:</b> ${phone || "—"}
+🏢 <b>Organization:</b> ${org || "—"}
+💬 <b>Message:</b> ${message || "—"}
+
+🌐 <b>Page:</b> ${window.location.href}
+⏰ ${new Date().toUTCString()}`;
+
+        try {
+            await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: "HTML" }),
+            });
+            submitBtn.classList.add("bg-green-600");
+            submitBtn.classList.remove("hover:bg-slate-800");
+            submitLbl.textContent = "Sent ✓";
+            form.reset();
+        } catch {
+            submitLbl.textContent = "Error — try again";
+            submitBtn.classList.add("bg-red-600");
+        } finally {
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitLbl.setAttribute("data-i18n", "contact_submit");
+                submitLbl.textContent = "SUBMIT REQUEST";
+                submitBtn.classList.remove("bg-green-600", "bg-red-600");
+                submitBtn.classList.add("hover:bg-slate-800");
+            }, 3000);
+        }
+    });
+</script>

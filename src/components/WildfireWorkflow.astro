@@ -1,59 +1,30 @@
----
-const steps = [
-    {
-        number: "01",
-        title: "Area Surveillance",
-        description:
-            "Continuous autonomous flight paths over high-risk forest zones to monitor for early smoke signatures.",
-    },
-    {
-        number: "02",
-        title: "Ignition Detection",
-        description:
-            "On-board AI analyzes thermal and visual data to confirm ignition points within seconds.",
-    },
-    {
-        number: "03",
-        title: "Front Mapping",
-        description:
-            "Drones track the fire perimeter and heat intensity, providing live updates to command centers.",
-    },
-    {
-        number: "04",
-        title: "Response Support",
-        description:
-            "Coordinate aerial drops and ground containment by providing real-time visibility through smoke.",
-    },
-];
----
-
 <section class="py-12 bg-white">
     <div class="max-w-screen-xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2
-                class="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight"
-            >
-                Response Workflow
-            </h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight" data-i18n="wf_wf_title">Response Workflow</h2>
             <div class="w-12 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {
-                steps.map((step) => (
-                    <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
-                        <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">
-                            {step.number}
-                        </span>
-                        <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight">
-                            {step.title}
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">
-                            {step.description}
-                        </p>
-                    </div>
-                ))
-            }
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">01</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="wf_wf1_title">Area Surveillance</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_wf1_desc">Continuous autonomous flight paths over high-risk forest zones to monitor for early smoke signatures.</p>
+            </div>
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">02</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="wf_wf2_title">Ignition Detection</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_wf2_desc">On-board AI analyzes thermal and visual data to confirm ignition points within seconds.</p>
+            </div>
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">03</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="wf_wf3_title">Front Mapping</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_wf3_desc">Drones track the fire perimeter and heat intensity, providing live updates to command centers.</p>
+            </div>
+            <div class="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-slate-100 group">
+                <span class="text-5xl font-black text-slate-200 absolute top-4 right-6 transition-colors group-hover:text-blue-500/10">04</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-4 pr-12 uppercase tracking-tight" data-i18n="wf_wf4_title">Response Support</h3>
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="wf_wf4_desc">Coordinate aerial drops and ground containment by providing real-time visibility through smoke.</p>
+            </div>
         </div>
     </div>
 </section>

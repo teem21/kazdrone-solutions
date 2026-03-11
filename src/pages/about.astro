@@ -3,27 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
-const values = [
-    {
-        icon: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z",
-        title: "Mission-Driven",
-        text: "We exist to make critical infrastructure safer and national boundaries more secure, using autonomous technology that operates without human risk.",
-    },
-    {
-        icon: "M3.75 13.5 10.5 6.75l1.5 1.5 4.5-4.5M3 17.25h18M3 12h18M3 6.75h18",
-        title: "Data-First",
-        text: "Every system we build is anchored in verifiable data — from real-time telemetry to AI classification logs — because decisions at scale demand accuracy.",
-    },
-    {
-        icon: "M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z",
-        title: "Personalization",
-        text: "Solution, software, dashboards, hardware, training, everything can be tailored for your needs",
-    },
-    {
-        icon: "m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9",
-        title: "Modular by Design",
-        text: "We don't sell one-size-fits-all kits. Our systems integrate with your existing ERP, command infrastructure, and sensor networks with minimal friction.",
-    },
+const icons = [
+    "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z",
+    "M3.75 13.5 10.5 6.75l1.5 1.5 4.5-4.5M3 17.25h18M3 12h18M3 6.75h18",
+    "M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z",
+    "m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9",
 ];
 ---
 
@@ -31,54 +15,28 @@ const values = [
     <Navbar />
     <main>
         <!-- Hero Section -->
-        <section
-            class="relative bg-slate-950 pt-24 pb-24 px-4 md:px-8 overflow-hidden"
-        >
-            <div
-                class="absolute inset-0 about-grid opacity-15 pointer-events-none"
-            >
-            </div>
-            <div
-                class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none"
-            >
-            </div>
-
+        <section class="relative bg-slate-950 pt-24 pb-24 px-4 md:px-8 overflow-hidden">
+            <div class="absolute inset-0 about-grid opacity-15 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none"></div>
             <div class="max-w-screen-2xl mx-auto relative z-10">
                 <div class="max-w-4xl">
-                    <span
-                        class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold tracking-wider uppercase mb-8 border border-blue-500/20"
-                    >
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold tracking-wider uppercase mb-8 border border-blue-500/20" data-i18n="about_badge">
                         About KAZDRONE
                     </span>
-                    <h1
-                        class="text-6xl md:text-8xl font-black tracking-tight text-white leading-[0.95] uppercase mb-8"
-                    >
-                        Built for the<br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"
-                        >
+                    <h1 class="text-6xl md:text-8xl font-black tracking-tight text-white leading-[0.95] uppercase mb-8">
+                        <span data-i18n="about_headline">Built for the</span><br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400" data-i18n="about_headline_accent">
                             Hard Missions.
                         </span>
                     </h1>
-                    <p
-                        class="text-xl md:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium"
-                    >
-                        We are a team of engineers, field operators, and AI
-                        researchers building the next generation of autonomous
-                        systems for industrial inspection, environmental
-                        protection, and national security.
+                    <p class="text-xl md:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium" data-i18n="about_desc">
+                        We are a team of engineers, field operators, and AI researchers building the next generation of autonomous systems for industrial inspection, environmental protection, and national security.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <button
-                            data-popup="contact"
-                            class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all hover:scale-105 active:scale-95 uppercase tracking-wide"
-                        >
+                        <button data-popup="contact" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all hover:scale-105 active:scale-95 uppercase tracking-wide" data-i18n="about_contact_btn">
                             Contact Us
                         </button>
-                        <a
-                            href="/solutions"
-                            class="px-8 py-4 bg-white/10 text-white rounded-full font-bold border border-white/20 hover:bg-white/20 transition-all hover:scale-105 active:scale-95 uppercase tracking-wide"
-                        >
+                        <a href="/solutions" class="px-8 py-4 bg-white/10 text-white rounded-full font-bold border border-white/20 hover:bg-white/20 transition-all hover:scale-105 active:scale-95 uppercase tracking-wide" data-i18n="about_solutions_btn">
                             View Solutions
                         </a>
                     </div>
@@ -90,48 +48,42 @@ const values = [
         <section class="py-24 bg-slate-50 px-4 md:px-8">
             <div class="max-w-screen-2xl mx-auto">
                 <div class="text-center mb-16">
-                    <p
-                        class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4"
-                    >
-                        How We Work
-                    </p>
-                    <h2
-                        class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight"
-                    >
-                        Core Values
-                    </h2>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4" data-i18n="about_values_label">How We Work</p>
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight" data-i18n="about_values_title">Core Values</h2>
                 </div>
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-                >
-                    {
-                        values.map((v) => (
-                            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="1.8"
-                                        stroke="#2563eb"
-                                        class="w-6 h-6"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d={v.icon}
-                                        />
-                                    </svg>
-                                </div>
-                                <h3 class="text-lg font-black text-slate-900 uppercase tracking-tight mb-3">
-                                    {v.title}
-                                </h3>
-                                <p class="text-slate-500 text-sm leading-relaxed">
-                                    {v.text}
-                                </p>
-                            </div>
-                        ))
-                    }
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Value 1 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#2563eb" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d={icons[0]} /></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 uppercase tracking-tight mb-3" data-i18n="about_val1_title">Mission-Driven</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed" data-i18n="about_val1_text">We exist to make critical infrastructure safer and national boundaries more secure, using autonomous technology that operates without human risk.</p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#2563eb" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d={icons[1]} /></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 uppercase tracking-tight mb-3" data-i18n="about_val2_title">Data-First</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed" data-i18n="about_val2_text">Every system we build is anchored in verifiable data — from real-time telemetry to AI classification logs — because decisions at scale demand accuracy.</p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#2563eb" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d={icons[2]} /></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 uppercase tracking-tight mb-3" data-i18n="about_val3_title">Personalization</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed" data-i18n="about_val3_text">Solution, software, dashboards, hardware, training, everything can be tailored for your needs.</p>
+                    </div>
+                    <!-- Value 4 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#2563eb" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d={icons[3]} /></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 uppercase tracking-tight mb-3" data-i18n="about_val4_title">Modular by Design</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed" data-i18n="about_val4_text">We don't sell one-size-fits-all kits. Our systems integrate with your existing ERP, command infrastructure, and sensor networks with minimal friction.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -139,46 +91,15 @@ const values = [
         <!-- Solution Links CTA Strip -->
         <section class="py-20 bg-slate-900 px-4 md:px-8">
             <div class="max-w-screen-2xl mx-auto text-center">
-                <p
-                    class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4"
-                >
-                    Our Work
-                </p>
-                <h2
-                    class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-6"
-                >
-                    Explore Our Solutions
-                </h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
-                    From pipeline inspection to border security — see the full
-                    portfolio of systems we've built and deployed.
-                </p>
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4" data-i18n="about_work_label">Our Work</p>
+                <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-6" data-i18n="about_work_title">Explore Our Solutions</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12" data-i18n="about_work_desc">From pipeline inspection to border security — see the full portfolio of systems we've built and deployed.</p>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <a
-                        href="/wildfire-solution"
-                        class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm"
-                        >Wildfire Monitoring</a
-                    >
-                    <a
-                        href="/border-solution"
-                        class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm"
-                        >Border Security</a
-                    >
-                    <a
-                        href="/pipeline-solution"
-                        class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm"
-                        >Pipeline Inspection</a
-                    >
-                    <a
-                        href="/grid-solution"
-                        class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm"
-                        >Substation Inspection</a
-                    >
-                    <a
-                        href="/solutions"
-                        class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all font-bold uppercase tracking-wide text-sm"
-                        >View All →</a
-                    >
+                    <a href="/wildfire-solution" class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm" data-i18n="about_wildfire_link">Wildfire Monitoring</a>
+                    <a href="/border-solution" class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm" data-i18n="about_border_link">Border Security</a>
+                    <a href="/pipeline-solution" class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm" data-i18n="about_pipeline_link">Pipeline Inspection</a>
+                    <a href="/grid-solution" class="px-6 py-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 transition-all font-bold uppercase tracking-wide text-sm" data-i18n="about_grid_link">Substation Inspection</a>
+                    <a href="/solutions" class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all font-bold uppercase tracking-wide text-sm" data-i18n="about_view_all">View All →</a>
                 </div>
             </div>
         </section>
@@ -186,21 +107,9 @@ const values = [
         <!-- Final CTA -->
         <section class="py-24 bg-white px-4 md:px-8">
             <div class="max-w-screen-2xl mx-auto text-center">
-                <h2
-                    class="text-4xl md:text-6xl font-black text-slate-900 uppercase tracking-tight mb-6"
-                >
-                    Ready to Deploy?
-                </h2>
-                <p
-                    class="text-slate-500 text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-                >
-                    Tell us about your mission and we'll configure a system that
-                    meets your exact requirements.
-                </p>
-                <button
-                    data-popup="contact"
-                    class="px-10 py-5 bg-slate-900 text-white rounded-full font-bold uppercase tracking-widest hover:bg-blue-600 transition-all hover:scale-105 active:scale-95 text-base"
-                >
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 uppercase tracking-tight mb-6" data-i18n="about_deploy_title">Ready to Deploy?</h2>
+                <p class="text-slate-500 text-xl max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="about_deploy_desc">Tell us about your mission and we'll configure a system that meets your exact requirements.</p>
+                <button data-popup="contact" class="px-10 py-5 bg-slate-900 text-white rounded-full font-bold uppercase tracking-widest hover:bg-blue-600 transition-all hover:scale-105 active:scale-95 text-base" data-i18n="about_deploy_btn">
                     Start the Conversation
                 </button>
             </div>
@@ -211,16 +120,8 @@ const values = [
 
 <style>
     .about-grid {
-        background-image: linear-gradient(
-                to right,
-                rgba(100, 116, 139, 0.2) 1px,
-                transparent 1px
-            ),
-            linear-gradient(
-                to bottom,
-                rgba(100, 116, 139, 0.2) 1px,
-                transparent 1px
-            );
+        background-image: linear-gradient(to right, rgba(100, 116, 139, 0.2) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(100, 116, 139, 0.2) 1px, transparent 1px);
         background-size: 60px 60px;
     }
 </style>

@@ -3,101 +3,37 @@ import { CheckCircle2 } from "lucide-astro";
 ---
 
 <section class="py-12 px-4 md:px-8 bg-white overflow-hidden">
-    <div
-        class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-20"
-    >
+    <div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-20">
         <div class="flex-1 relative order-2 lg:order-1">
-            <div
-                class="relative group rounded-[40px] overflow-hidden shadow-4xl bg-slate-200"
-            >
-                <img
-                    src="/assets/image.png"
-                    alt="Wildfire Surveillance"
-                    class="w-full h-auto object-cover transition-transform duration-[2s] group-hover:scale-110"
-                />
-                <div
-                    class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"
-                >
-                </div>
+            <div class="relative group rounded-[40px] overflow-hidden shadow-4xl bg-slate-200">
+                <img src="/assets/image.png" alt="Wildfire Surveillance" class="w-full h-auto object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
-            <!-- Decorative ring -->
-            <div
-                class="absolute -inset-4 border border-blue-600/10 rounded-[50px] pointer-events-none -z-10"
-            >
-            </div>
+            <div class="absolute -inset-4 border border-blue-600/10 rounded-[50px] pointer-events-none -z-10"></div>
         </div>
-
         <div class="flex-1 order-1 lg:order-2">
-            <span
-                class="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block"
-                >Mission Capabilities</span
-            >
-            <h2
-                class="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight uppercase"
-            >
-                Precision <br /> Fire Intelligence
-            </h2>
-
+            <span class="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block" data-i18n="wf_spec_label">Mission Capabilities</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight uppercase" data-i18n="wf_spec_title">Precision Fire Intelligence</h2>
             <div class="space-y-10">
                 <div class="flex gap-6 group">
-                    <div
-                        class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                    >
-                        <CheckCircle2 size={14} class="text-white" />
-                    </div>
+                    <div class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><CheckCircle2 size={14} class="text-white" /></div>
                     <div>
-                        <h4
-                            class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight"
-                        >
-                            Thermal Core Integration
-                        </h4>
-                        <p class="text-slate-500 leading-relaxed max-w-lg">
-                            Dual-sensor payloads combining 4K visual with
-                            high-resolution radiometric thermal for smoke
-                            penetration.
-                        </p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight" data-i18n="wf_spec1_title">Thermal Core Integration</h4>
+                        <p class="text-slate-500 leading-relaxed max-w-lg" data-i18n="wf_spec1_desc">Dual-sensor payloads combining 4K visual with high-resolution radiometric thermal for smoke penetration.</p>
                     </div>
                 </div>
-
                 <div class="flex gap-6 group">
-                    <div
-                        class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                    >
-                        <CheckCircle2 size={14} class="text-white" />
-                    </div>
+                    <div class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><CheckCircle2 size={14} class="text-white" /></div>
                     <div>
-                        <h4
-                            class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight"
-                        >
-                            BVLOS and Mesh technology
-                        </h4>
-                        <p class="text-slate-500 leading-relaxed max-w-lg">
-                            Extended range data links ensuring constant
-                            connectivity in remote forest terrain and
-                            smoke-filled valleys. Mesh technology allows for
-                            multiple drones to be connected to each other and to
-                            the ground station. This technology secures safe
-                            connection even in harsh environments
-                        </p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight" data-i18n="wf_spec2_title">BVLOS and Mesh technology</h4>
+                        <p class="text-slate-500 leading-relaxed max-w-lg" data-i18n="wf_spec2_desc">Extended range data links ensuring constant connectivity in remote forest terrain and smoke-filled valleys. Mesh technology allows for multiple drones to be connected to each other and to the ground station.</p>
                     </div>
                 </div>
-
                 <div class="flex gap-6 group">
-                    <div
-                        class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                    >
-                        <CheckCircle2 size={14} class="text-white" />
-                    </div>
+                    <div class="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><CheckCircle2 size={14} class="text-white" /></div>
                     <div>
-                        <h4
-                            class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight"
-                        >
-                            Edge AI Fire Detection
-                        </h4>
-                        <p class="text-slate-500 leading-relaxed max-w-lg">
-                            Automated ignition point recognition and heat vector
-                            analysis processed on-board for zero-latency alerts.
-                        </p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight" data-i18n="wf_spec3_title">Edge AI Fire Detection</h4>
+                        <p class="text-slate-500 leading-relaxed max-w-lg" data-i18n="wf_spec3_desc">Automated ignition point recognition and heat vector analysis processed on-board for zero-latency alerts.</p>
                     </div>
                 </div>
             </div>

@@ -7,10 +7,11 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
         <div class="text-center mb-16">
             <span
                 class="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm"
-                >Our Expertise</span
+                data-i18n="exp_label">Our Expertise</span
             >
             <h2
                 class="text-4xl md:text-5xl font-bold mt-4 text-slate-900 leading-tight"
+                data-i18n="exp_title"
             >
                 What we can do?
             </h2>
@@ -27,10 +28,10 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
                     >
                         <Brain size={32} />
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4" data-i18n="exp_card1_title">
                         AI DETECTION AND PREDICTION MODELS
                     </h3>
-                    <p class="text-slate-600 leading-relaxed mb-8">
+                    <p class="text-slate-600 leading-relaxed mb-8" data-i18n="exp_card1_desc">
                         Advanced neural networks processing real-time aerial
                         footage for precision identification.
                     </p>
@@ -39,10 +40,8 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
                     href="#"
                     class="text-blue-600 font-bold flex items-center gap-2 group/link"
                 >
-                    LEARN MORE <span
-                        class="transition-transform group-hover/link:translate-x-1"
-                        >→</span
-                    >
+                    <span data-i18n="exp_learn_more">LEARN MORE</span>
+                    <span class="transition-transform group-hover/link:translate-x-1">→</span>
                 </a>
             </div>
 
@@ -57,10 +56,10 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
                     >
                         <Cpu size={28} />
                     </div>
-                    <h3 class="text-xl font-bold mb-3">
+                    <h3 class="text-xl font-bold mb-3" data-i18n="exp_card2_title">
                         CUSTOM SOLUTION FOR YOUR PROBLEM
                     </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
+                    <p class="text-sm text-slate-500 leading-relaxed" data-i18n="exp_card2_desc">
                         Tailor-made hardware and software integration designed
                         specifically for your operational needs.
                     </p>
@@ -74,10 +73,10 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
                     >
                         <Database size={28} />
                     </div>
-                    <h3 class="text-xl font-bold mb-3">
+                    <h3 class="text-xl font-bold mb-3" data-i18n="exp_card3_title">
                         REAL TIME DATA TRANSMISSION
                     </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
+                    <p class="text-sm text-slate-500 leading-relaxed" data-i18n="exp_card3_desc">
                         Get all data collected, analyzed, visualized and shared
                         in real time.
                     </p>
@@ -91,10 +90,10 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
                     >
                         <Network size={28} />
                     </div>
-                    <h3 class="text-xl font-bold mb-3">
+                    <h3 class="text-xl font-bold mb-3" data-i18n="exp_card4_title">
                         ERP & CUSTOM INTEGRATION
                     </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
+                    <p class="text-sm text-slate-500 leading-relaxed" data-i18n="exp_card4_desc">
                         Seamlessly connect drone data with your existing
                         enterprise resource planning software.
                     </p>
@@ -108,8 +107,8 @@ import { Brain, Cpu, Database, Network } from "lucide-astro";
                     >
                         <Cpu size={28} />
                     </div>
-                    <h3 class="text-xl font-bold mb-3">COMMAND CENTER & IOT</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
+                    <h3 class="text-xl font-bold mb-3" data-i18n="exp_card5_title">COMMAND CENTER & IOT</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed" data-i18n="exp_card5_desc">
                         Connect drone data with your IOT platform in one place.
                         Managing drones and their activity will be easy.
                     </p>

@@ -1,5 +1,5 @@
 ---
-import { Twitter, Instagram, Linkedin, Mail } from "lucide-astro";
+import { Twitter, Instagram, Linkedin } from "lucide-astro";
 ---
 
 <footer
@@ -13,7 +13,7 @@ import { Twitter, Instagram, Linkedin, Mail } from "lucide-astro";
                         >KAZDRONE<span class="text-blue-500"> SOLUTIONS</span>
                     </span>
                 </a>
-                <p class="text-sm leading-relaxed mb-8 max-w-xs">
+                <p class="text-sm leading-relaxed mb-8 max-w-xs" data-i18n="footer_desc">
                     Leading provider of enterprise drone solutions and
                     AI-powered aerial intelligence. Transforming industries
                     through precision and automation.
@@ -40,37 +40,22 @@ import { Twitter, Instagram, Linkedin, Mail } from "lucide-astro";
             <div>
                 <h4
                     class="text-white font-bold mb-8 uppercase tracking-widest text-sm"
+                    data-i18n="footer_industries"
                 >
                     Industries
                 </h4>
                 <ul class="space-y-4 text-sm">
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >Public Safety</a
-                        >
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_public_safety">Public Safety</a>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >Nature protection
-                        </a>
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_nature">Nature protection</a>
                     </li>
                     <li>
-                        <a
-                            href="/pipeline-solution"
-                            class="hover:text-blue-400 transition-colors"
-                            >Oil & Gas</a
-                        >
+                        <a href="/pipeline-solution" class="hover:text-blue-400 transition-colors" data-i18n="footer_oilgas">Oil & Gas</a>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >Electricity</a
-                        >
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_electricity">Electricity</a>
                     </li>
                 </ul>
             </div>
@@ -78,37 +63,22 @@ import { Twitter, Instagram, Linkedin, Mail } from "lucide-astro";
             <div>
                 <h4
                     class="text-white font-bold mb-8 uppercase tracking-widest text-sm"
+                    data-i18n="footer_solutions"
                 >
                     Solutions
                 </h4>
                 <ul class="space-y-4 text-sm">
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >ERP Integration</a
-                        >
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_erp">ERP Integration</a>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >Custom AI training</a
-                        >
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_ai">Custom AI training</a>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >Data collection</a
-                        >
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_data">Data collection</a>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            class="hover:text-blue-400 transition-colors"
-                            >IoT Systems</a
-                        >
+                        <a href="#" class="hover:text-blue-400 transition-colors" data-i18n="footer_iot">IoT Systems</a>
                     </li>
                 </ul>
             </div>
@@ -116,17 +86,11 @@ import { Twitter, Instagram, Linkedin, Mail } from "lucide-astro";
             <div
                 class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest font-bold"
             >
-                <p>© 2026 KAZDRONE SOLUTIONS. All rights reserved.</p>
+                <p data-i18n="footer_copy">© 2026 KAZDRONE SOLUTIONS. All rights reserved.</p>
                 <div class="flex gap-8">
-                    <a href="#" class="hover:text-white transition-colors"
-                        >Privacy Policy</a
-                    >
-                    <a href="#" class="hover:text-white transition-colors"
-                        >Terms of Service</a
-                    >
-                    <a href="#" class="hover:text-white transition-colors"
-                        >Cookie Settings</a
-                    >
+                    <a href="#" class="hover:text-white transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors" data-i18n="footer_terms">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors" data-i18n="footer_cookies">Cookie Settings</a>
                 </div>
             </div>
         </div>

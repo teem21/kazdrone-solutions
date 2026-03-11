@@ -23,12 +23,14 @@
             <div>
                 <p
                     class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-0.5"
+                    data-i18n="popup_brand"
                 >
                     KAZDRONE SOLUTIONS
                 </p>
                 <h2
                     id="popup-title"
                     class="text-xl font-black text-white uppercase tracking-tight"
+                    data-i18n="popup_title"
                 >
                     Request a Demo
                 </h2>
@@ -56,7 +58,7 @@
 
         <!-- Form Body -->
         <div class="p-8">
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed">
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed" data-i18n="popup_desc">
                 Tell us about your mission and we'll show you exactly how our
                 technology can help — with a live, tailored demonstration.
             </p>
@@ -66,10 +68,12 @@
                     <div class="space-y-1.5">
                         <label
                             class="text-xs font-bold text-slate-400 uppercase tracking-widest"
-                            >Full Name</label
+                            data-i18n="popup_fullname">Full Name</label
                         >
                         <input
+                            id="popup-name"
                             type="text"
+                            data-i18n-placeholder="popup_name_ph"
                             placeholder="Your Name"
                             required
                             class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
@@ -81,6 +85,7 @@
                             >Email</label
                         >
                         <input
+                            id="popup-email"
                             type="email"
                             placeholder="email@example.com"
                             required
@@ -90,10 +95,12 @@
                     <div class="space-y-1.5">
                         <label
                             class="text-xs font-bold text-slate-400 uppercase tracking-widest"
-                            >Phone</label
+                            data-i18n="popup_phone">Phone</label
                         >
                         <input
+                            id="popup-phone"
                             type="tel"
+                            data-i18n-placeholder="popup_phone_ph"
                             placeholder="+1 (555) 000-0000"
                             class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
                         />
@@ -101,10 +108,12 @@
                     <div class="space-y-1.5">
                         <label
                             class="text-xs font-bold text-slate-400 uppercase tracking-widest"
-                            >Organization</label
+                            data-i18n="popup_org">Organization</label
                         >
                         <input
+                            id="popup-org"
                             type="text"
+                            data-i18n-placeholder="popup_org_ph"
                             placeholder="Company / Agency Name"
                             class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm"
                         />
@@ -114,38 +123,43 @@
                 <div class="space-y-1.5">
                     <label
                         class="text-xs font-bold text-slate-400 uppercase tracking-widest"
-                        >Solution of Interest</label
+                        data-i18n="popup_solution">Solution of Interest</label
                     >
                     <select
+                        id="popup-solution"
                         class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all text-sm text-slate-700 appearance-none"
                     >
-                        <option value="">Select a solution…</option>
-                        <option>Pipeline Inspection</option>
-                        <option>Substation Inspection</option>
-                        <option>Wildfire Monitoring</option>
-                        <option>Border Security</option>
-                        <option>Custom Solution</option>
+                        <option value="" data-i18n="popup_select">Select a solution…</option>
+                        <option data-i18n="popup_opt_pipeline">Pipeline Inspection</option>
+                        <option data-i18n="popup_opt_grid">Substation Inspection</option>
+                        <option data-i18n="popup_opt_wildfire">Wildfire Monitoring</option>
+                        <option data-i18n="popup_opt_border">Border Security</option>
+                        <option data-i18n="popup_opt_custom">Custom Solution</option>
                     </select>
                 </div>
 
                 <div class="space-y-1.5">
                     <label
                         class="text-xs font-bold text-slate-400 uppercase tracking-widest"
-                        >Message</label
+                        data-i18n="popup_message">Message</label
                     >
                     <textarea
+                        id="popup-message"
                         rows="3"
+                        data-i18n-placeholder="popup_msg_ph"
                         placeholder="Tell us about your use case and what you'd like to achieve…"
                         class="w-full px-5 py-3.5 bg-slate-50 border border-transparent rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-none text-sm"
                     ></textarea>
                 </div>
 
                 <button
+                    id="popup-submit-btn"
                     type="submit"
                     class="w-full bg-slate-900 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all hover:bg-blue-600 active:scale-[0.98] flex items-center justify-center gap-3 text-sm mt-2"
                 >
-                    <span>Submit Request</span>
+                    <span id="popup-submit-label" data-i18n="popup_submit">Submit Request</span>
                     <svg
+                        id="popup-submit-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
                         height="18"
@@ -166,16 +180,30 @@
 </div>
 
 <script>
-    const overlay = document.getElementById("contact-popup-overlay")!;
-    const card = document.getElementById("contact-popup-card")!;
-    const closeBtn = document.getElementById("contact-popup-close")!;
-    const backdrop = document.getElementById("contact-popup-backdrop")!;
+    const TG_TOKEN = "8380395507:AAGFe6AU8WVNsLvA-OJrhJV5bOSW-EKntcM";
+    const TG_CHAT  = "458983984";
+
+    async function sendToTelegram(text: string) {
+        await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: "HTML" }),
+        });
+    }
+
+    const overlay   = document.getElementById("contact-popup-overlay")!;
+    const card      = document.getElementById("contact-popup-card")!;
+    const closeBtn  = document.getElementById("contact-popup-close")!;
+    const backdrop  = document.getElementById("contact-popup-backdrop")!;
+    const form      = document.getElementById("contact-popup-form") as HTMLFormElement;
+    const submitBtn = document.getElementById("popup-submit-btn") as HTMLButtonElement;
+    const submitLbl = document.getElementById("popup-submit-label")!;
+    const submitIcon = document.getElementById("popup-submit-icon")!;
 
     function openPopup() {
         overlay.classList.remove("hidden");
         overlay.classList.add("flex");
         document.body.style.overflow = "hidden";
-        // Animate in
         requestAnimationFrame(() => {
             card.classList.remove("scale-95", "opacity-0");
             card.classList.add("scale-100", "opacity-100");
@@ -194,21 +222,62 @@
 
     closeBtn.addEventListener("click", closePopup);
     backdrop.addEventListener("click", closePopup);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePopup(); });
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closePopup();
+    document.addEventListener("click", (e) => {
+        const trigger = (e.target as HTMLElement).closest('[data-popup="contact"]');
+        if (trigger) { e.preventDefault(); openPopup(); }
     });
 
-    // Wire up all trigger elements
-    document.addEventListener("click", (e) => {
-        const target = e.target as HTMLElement;
-        const trigger = target.closest('[data-popup="contact"]');
-        if (trigger) {
-            e.preventDefault();
-            openPopup();
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name     = (document.getElementById("popup-name")     as HTMLInputElement).value.trim();
+        const email    = (document.getElementById("popup-email")    as HTMLInputElement).value.trim();
+        const phone    = (document.getElementById("popup-phone")    as HTMLInputElement).value.trim();
+        const org      = (document.getElementById("popup-org")      as HTMLInputElement).value.trim();
+        const solution = (document.getElementById("popup-solution") as HTMLSelectElement).value.trim();
+        const message  = (document.getElementById("popup-message")  as HTMLTextAreaElement).value.trim();
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitLbl.textContent = "Sending…";
+        submitIcon.style.display = "none";
+
+        const text =
+`🆕 <b>New Lead — KAZDRONE SOLUTIONS</b>
+
+👤 <b>Name:</b> ${name || "—"}
+📧 <b>Email:</b> ${email || "—"}
+📞 <b>Phone:</b> ${phone || "—"}
+🏢 <b>Organization:</b> ${org || "—"}
+🎯 <b>Solution:</b> ${solution || "—"}
+💬 <b>Message:</b> ${message || "—"}
+
+🌐 <b>Page:</b> ${window.location.href}
+⏰ ${new Date().toUTCString()}`;
+
+        try {
+            await sendToTelegram(text);
+            submitBtn.classList.remove("hover:bg-blue-600");
+            submitBtn.classList.add("bg-green-600");
+            submitLbl.textContent = "Sent ✓";
+            form.reset();
+            setTimeout(closePopup, 1500);
+        } catch {
+            submitLbl.textContent = "Error — try again";
+            submitBtn.classList.add("bg-red-600");
+        } finally {
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitLbl.setAttribute("data-i18n", "popup_submit");
+                submitLbl.textContent = "Submit Request";
+                submitIcon.style.display = "";
+                submitBtn.classList.remove("bg-green-600", "bg-red-600");
+                submitBtn.classList.add("hover:bg-blue-600");
+            }, 2500);
         }
     });
 
-    // Expose globally for any programmatic use
     (window as any).openContactPopup = openPopup;
 </script>
